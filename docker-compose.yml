@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: raizes_db
+    environment:
+      POSTGRES_USER: raizes
+      POSTGRES_PASSWORD: raizes
+      POSTGRES_DB: raizes_do_nordeste
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - raizes_pgdata:/var/lib/postgresql/data
+volumes:
+  raizes_pgdata:
